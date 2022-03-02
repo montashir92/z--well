@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  
+  <style>
+    .slider-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      height: 100vh;
+      width: 100%;
+    }
+
+    .slider-container h1 {
+      color: #fff;
+      font-size: 100px;
+      letter-spacing: 5px;
+      position: relative;
+      z-index: 100;
+      text-align: center;
+    }
+
+    .slider-container::after {
+      background-color: #000;
+      content: '';
+      position: absolute;
+      opacity: 0.3;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .slide {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      height: 100%;
+      width: 100%;
+      transform: scale(1.15);
+      transition: opacity .6s ease;
+    }
+
+    .slide.active {
+      animation: grow 4s linear forwards;
+      opacity: 1;
+    }
+
+    @keyframes grow {
+
+      0%,
+      20% {
+        transform: scale(1);
+      }
+
+      75%,
+      100% {
+        transform: scale(1.15);
+      }
+    }
+
+    .controls-container {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+
+    .control {
+      background-color: #fff;
+      cursor: pointer;
+      opacity: 0.5;
+      margin: 6px;
+      height: 40px;
+      width: 5px;
+      transition: opacity 0.3s, background-color 0.3s, transform 0.3s;
+    }
+
+    .control.active,
+    .control:hover {
+      background-color: #fff;
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    /* Custom style */
+    .accordion-button::after {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+      transform: scale(.7) !important;
+    }
+    .accordion-button:not(.collapsed)::after {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+  </style>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    jQuery(document).ready(function ($) {
+      $('.counter').counterUp({
+        delay: 10,
+        time: 1000
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <!-- start slider  -->
+  <section>
+    
+    <div class="menu-bg fixed-top" id="navbar">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-6">
+            <a class="navbar-brand" href="index.html">
+              <img class="logo-img " src="image/logo/logo.jpg" alt="">
+            </a>
+            <a class="navbar-brand text-white fw-bold" href="index.html" style="text-transform: uppercase;">
+              <span style="color: #F79622;">Z well</span class="fw-bold"> Homes
+            </a>
+          </div>
+          <div class="col-lg-9 col-md-9 col-6">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="about.html">About Us</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Businesses
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">ZENITH Corporation</a></li>
+                        <li><a class="dropdown-item" href="#">ZENITH DREAM Housing</a></li>
+                        <li><a class="dropdown-item" href="#">ZENITH Toileties and Cosmatics Ltd.</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="mediablog.html" tabindex="-1" aria-disabled="true">Media & Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="contact.html" tabindex="-1" aria-disabled="true">Contact Us</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end slider  -->
+
+ <!-- Start About section -->
+ <div class="contact-slider py-2">
+    <div class="container">
+        <div class="about-title py-5">
+            <h2 class="text-white py-5 mt-5">Contact Us</h2>
+        </div>
+        
+    </div>
+</div>
+
+  
+
+  <!-- Start Architects And Engineers Section -->
+  <section class="py-3 about-content" style="background: #001204;">
+    <div class="container">
+      
+      <div class="row">
+        <div class="col-lg-8 col-md-8 col-12">
+            <h3 class="text-white py-4 fw-normal">Fill up the form for your any inquiry.  Our concern person will be contact with you ASAP. </h3>
+          <div class="contact-form bg-dark px-3 py-4 text-white">
+
+            <form class="row g-3">
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">First Name</label>
+                  <input type="text" class="form-control" id="inputEmail4" placeholder="Enter First Name">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="Enter Last Name">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Mobile</label>
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="Enter Mobile Number">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Enter Email Address">
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress2" class="form-label">Message (if any)</label>
+
+                  <textarea cols="2" class="form-control" id="inputAddress2" placeholder="Message Here">
+                  </textarea>
+                </div>
+                
+                
+                <div class="col-12">
+                  <a type="submit" class="btn btn-success">Send Message</a>
+                </div>
+              </form>
+		</div>
+		</div>
+
+        <div class="col-lg-4 col-md-4 col-12 py-3 px-5">
+            <div class="text-white">
+                <h4>For inquiries contact:</h4>
+                <p>+88 02 9011132</p>
+                <p>01713 201960 <br>01973 201960</p>
+                <p>litonzenith@gmail.com</p>
+            </div>
+
+            <div class="text-white py-3">
+                <h4>Office Address :</h4>
+                <p>Anushka Bhaban (Level-6), <br> House-23, Road-01, Block-Kha,</p>
+                <p>Section-06, Mirpur-10, Dhaka-1216, Bangladesh</p>
+                <p>facebook: Z Well Home’s (Pvt.) Ltd.</p>
+            </div>
+
+            <div class="basr-social-share social">
+                <ul class="">
+                  <li>
+                    <a class="facebook" href=""><i class="fa-brands fa-facebook"></i><span>Facebook</span></a>
+                  </li>
+                              
+                  <li>
+                    <a class="twitter" href=""><i class="fa-brands fa-twitter"></i><span>Twitter</span></a>
+                  </li>
+                              
+                  <li>
+                      <a class="googleplus" href=""><i class="fa-brands fa-google-plus"></i><span>Google Plus</span></a>
+                  </li>
+                              
+                  <li>
+                    <a class="linkedin" href=""><i class="fa-brands fa-linkedin"></i><span>Linkedin</span></a>
+                  </li> 
+                              
+                </ul>
+              </div>
+        </div>
+
+        </div>
+        </div>
+
+    <div class="bg-dark">
+        <div class="container">
+            <div class="col-lg-12 col-md-12 col-12">
+                <div class="py-3">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.3280951562897!2d90.36650911429808!3d23.806929392532837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0d6f6b8c2ff%3A0x3b138861ee9c8c30!2sMirpur%2010%20Roundabout%2C%20Dhaka%201216!5e0!3m2!1sen!2sbd!4v1645268448801!5m2!1sen!2sbd" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+  </section>
+
+  <!-- End Architects And Engineers Section -->
+
+  <!-- Start Footer section -->
+  <section class="bg-footer p-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-12">
+          <div>
+            <h4 class="text-white">Important Menu</h4>
+            <ul class="footer-menu">
+              <li><a href="#"><i class="fa-solid fa-angle-right text-white"></i> Home</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i> Service</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-12">
+          <div>
+            <h4 class="text-white">Important Menu</h4>
+            <ul class="footer-menu">
+              <li><a href="#"><i class="fa-solid fa-angle-right text-white"></i> Career</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i> All project</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i> Blog</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-12">
+          <div>
+            <h4 class="text-white">About Us</h4>
+            <p class="text-white">
+              Z WELL Homes is an active member of the Real Estate & Housing Association of Bangladesh
+              Z WELL Homes is an active member of the Real Estate & Housing Association of Bangladesh
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row"></div>
+    </div>
+  </section>
+  <!-- End Footer section -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+  <script src="js/jquery.counterup.min.js"></script>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/all.js"></script>
+  <script src="js/owl.carousel.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const controls = document.querySelectorAll('.control');
+    let activeSlide = 0;
+    let prevActive = 0;
+
+    changeSlides();
+    let int = setInterval(changeSlides, 4000);
+
+    function changeSlides() {
+      slides[prevActive].classList.remove('active');
+      controls[prevActive].classList.remove('active');
+
+      slides[activeSlide].classList.add('active');
+      controls[activeSlide].classList.add('active');
+
+      prevActive = activeSlide++;
+
+      if (activeSlide >= slides.length) {
+        activeSlide = 0;
+      }
+
+      console.log(prevActive, activeSlide);
+    }
+
+    controls.forEach(control => {
+      control.addEventListener('click', () => {
+        let idx = [...controls].findIndex(c => c === control);
+        activeSlide = idx;
+
+        changeSlides();
+
+        clearInterval(int);
+        int = setInterval(changeSlides, 4000);
+      });
+    });
+  </script>
+
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 20,
+      autoplay: true,
+      autoplayTimeout: 1000,
+      nav: false,
+      dots: false,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 3
+        }
+      }
+    })
+  </script>
+
+
+</body>
+
+</html>

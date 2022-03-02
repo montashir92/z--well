@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <style>
+    .side-menu{
+      position: fixed;
+      top: 45%;
+      bottom: auto;
+      transform: translate(-50%);
+      left: 0;
+    }
+     #sidenav a{
+        text-decoration:none;
+        font-size:20px;
+        color:white;
+        position:absolute;
+        border-radius:0 5px 5px 0px;
+        left:-121px;
+        transition:0.3s;
+        position: fixed;
+        width:150px;
+        margin-left:10px;
+      }
+      i{
+        padding-right:10px;
+        padding-left:10px
+        
+      }
+      #sidenav a:hover{
+        left:0px; 
+        text-align:center;
+      }
+      /* #sidenav a:hover i{
+        display:;
+      } */
+      #about{
+        top:-5px;
+        background: #941cf7;
+      }
+      #blog{
+        top:50px;
+        background: #19f006;
+      }
+      #projects{
+        top:106px;
+        background: #19f006;
+      }
+      #contact{
+        top:110px;
+        background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+      }
+      .contact-display{
+        display: none;
+      }
+      
+  </style>
+
+  <style>
+    .slider-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      height: 100vh;
+      width: 100%;
+    }
+
+    .slider-container h1 {
+      color: #fff;
+      font-size: 100px;
+      letter-spacing: 5px;
+      position: relative;
+      z-index: 100;
+      text-align: center;
+    }
+
+    .slider-container::after {
+      background-color: #000;
+      content: '';
+      position: absolute;
+      opacity: 0.3;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .slide {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      height: 100%;
+      width: 100%;
+      transform: scale(1.15);
+      transition: opacity .6s ease;
+    }
+
+    .slide.active {
+      animation: grow 4s linear forwards;
+      opacity: 1;
+    }
+
+    @keyframes grow {
+
+      0%,
+      20% {
+        transform: scale(1);
+      }
+
+      75%,
+      100% {
+        transform: scale(1.15);
+      }
+    }
+
+    .controls-container {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+
+    .control {
+      background-color: #fff;
+      cursor: pointer;
+      opacity: 0.5;
+      margin: 6px;
+      height: 40px;
+      width: 5px;
+      transition: opacity 0.3s, background-color 0.3s, transform 0.3s;
+    }
+
+    .control.active,
+    .control:hover {
+      background-color: #fff;
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    
+
+  </style>
+
+
+
+</head>
+
+<body>
+  
+
+  <!-- Start Sideber section -->
+  <div class="container">
+    <div class="side-menu" id="sidenav">
+      <a href="contact.html" id="about" class="py-2">Contact Us <i class="fa-regular fa-envelope" style="padding-left: 15px;"></i></a>
+      <a href="#" id="blog" class="py-2">0173244556 <i class="fa-solid fa-phone-flip " style="padding-left: 5px;"></i></a>
+      <a href="#" id="projects" class="py-2">Whatsapp <i class="fa-brands fa-whatsapp" style="padding-left: 25px;"></i></a>
+    </div><!-- closing of sidemenu-->
+  </div><!-- container-->
+  <!-- End Sideber section -->
+
+   <!-- start slider  -->
+   <section>
+    
+    <div class="menu-bg fixed-top" id="navbar">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-6">
+            <a class="navbar-brand" href="index.html">
+              <img class="logo-img " src="image/logo-demo.png" alt="">
+            </a>
+            <a class="navbar-brand text-white" href="index.html">
+              <span style="color: #F79622;">Z well</span>-Homes
+            </a>
+          </div>
+          <div class="col-lg-9 col-md-9 col-6">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="about.html">About Us</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Businesses
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">ZENITH Corporation</a></li>
+                        <li><a class="dropdown-item" href="#">ZENITH DREAM Housing</a></li>
+                        <li><a class="dropdown-item" href="#">ZENITH Toileties and Cosmatics Ltd.</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="mediablog.html" tabindex="-1" aria-disabled="true">Media & Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="contact.html" tabindex="-1" aria-disabled="true">Contact Us</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end slider  -->
+
+
+  <section class="our-blog py-2">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-12 col-md-6 col-12 py-4">
+          <div class="blog-content bg-white mb-3">
+            <div class="card-body">
+                <img src="image/abdul.jpg" class="" style="float: left; width: 380px; margin-right: 15px;" alt="">
+            <h2 class="py-3 fw-normal">Abdul Khaleque Founder & Managing Director</h2>
+              <p class="blog-para py-2" style="line-height: 30px; text-align: justify;">The last few years have seen a revolutionary change in the construction industry. The dream of building a permanent home for every human being, whether in town or village, is eternal. No matter what a person can do, his dream is many times bigger. The industry has gained a great deal of notoriety due to some unscrupulous businessmen, just as some good developers or builders have come up with aesthetic modernity or artistry in building houses or apartments in cities or villages. This has created a crisis of confidence among the flat buyers. But will people's dreams remain elusive? Following this, some friends and acquaintances have come together and are trying to build a permanent residence in one of the corners of the city by buying land in shares and building houses. But due to inexperience, lack of coordination and lack of responsibility, there are many instances of struggling to implement even in 5-6 years by solving all the complications that arise when building a house by finding a free land. It should be noted here that in the case of conventional developers, even if the buyers pay 90% of the total value of the flat, the flat is not registered or handed over. On the other hand, in our combined share system, the flat owners get the sub-kabla registration of the land along with the payment of the share price of the land, which makes the investment 100% secure. Z Well Homes (Pvt) Ltd. has won the trust of flat owners by securing accommodation for 200 families by handing over 10 projects in a share system for a long period of 10 years. At present we have two ongoing projects in Mirpur, Dhaka. We carry out a new project by handing over a project in the share system, as a result of which the project handover can be ensured in a timely manner. We firmly believe that if the confidence and cooperation of the flat buyers continues then we will be the dedicated riders in fulfilling their dreams InshaAllah. </p>
+
+              
+                
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Start Footer section -->
+  <section class="bg-footer p-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-12">
+          <div>
+            <h4 class="text-white">Important Menu</h4>
+            <ul class="footer-menu">
+              <li><a href="#"><i class="fa-solid fa-angle-right text-white"></i> Home</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i> Service</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-12">
+          <div>
+            <h4 class="text-white">Important Menu</h4>
+            <ul class="footer-menu">
+              <li><a href="#"><i class="fa-solid fa-angle-right text-white"></i> Career</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i> All project</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i> Blog</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-12">
+          <div>
+            <h4 class="text-white">About Us</h4>
+            <p class="text-white">
+              Z WELL Homes is an active member of the Real Estate & Housing Association of Bangladesh
+              Z WELL Homes is an active member of the Real Estate & Housing Association of Bangladesh
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row"></div>
+    </div>
+  </section>
+  <!-- End Footer section -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+  <script src="js/jquery.counterup.min.js"></script>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/all.js"></script>
+  <script src="js/owl.carousel.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const controls = document.querySelectorAll('.control');
+    let activeSlide = 0;
+    let prevActive = 0;
+
+    changeSlides();
+    let int = setInterval(changeSlides, 4000);
+
+    function changeSlides() {
+      slides[prevActive].classList.remove('active');
+      controls[prevActive].classList.remove('active');
+
+      slides[activeSlide].classList.add('active');
+      controls[activeSlide].classList.add('active');
+
+      prevActive = activeSlide++;
+
+      if (activeSlide >= slides.length) {
+        activeSlide = 0;
+      }
+
+      console.log(prevActive, activeSlide);
+    }
+
+    controls.forEach(control => {
+      control.addEventListener('click', () => {
+        let idx = [...controls].findIndex(c => c === control);
+        activeSlide = idx;
+
+        changeSlides();
+
+        clearInterval(int);
+        int = setInterval(changeSlides, 4000);
+      });
+    });
+  </script>
+
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 20,
+      autoplay: true,
+      autoplayTimeout: 1000,
+      nav: false,
+      dots: false,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 3
+        }
+      }
+    })
+  </script>
+
+
+</body>
+
+</html>

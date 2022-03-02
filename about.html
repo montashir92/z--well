@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .slider-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      height: 100vh;
+      width: 100%;
+    }
+
+    .slider-container h1 {
+      color: #fff;
+      font-size: 100px;
+      letter-spacing: 5px;
+      position: relative;
+      z-index: 100;
+      text-align: center;
+    }
+
+    .slider-container::after {
+      background-color: #000;
+      content: '';
+      position: absolute;
+      opacity: 0.3;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .slide {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      height: 100%;
+      width: 100%;
+      transform: scale(1.15);
+      transition: opacity .6s ease;
+    }
+
+    .slide.active {
+      animation: grow 4s linear forwards;
+      opacity: 1;
+    }
+
+    @keyframes grow {
+
+      0%,
+      20% {
+        transform: scale(1);
+      }
+
+      75%,
+      100% {
+        transform: scale(1.15);
+      }
+    }
+
+    .controls-container {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+
+    .control {
+      background-color: #fff;
+      cursor: pointer;
+      opacity: 0.5;
+      margin: 6px;
+      height: 40px;
+      width: 5px;
+      transition: opacity 0.3s, background-color 0.3s, transform 0.3s;
+    }
+
+    .control.active,
+    .control:hover {
+      background-color: #fff;
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    /* Custom style */
+    .accordion-button::after {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+      transform: scale(.7) !important;
+    }
+    .accordion-button:not(.collapsed)::after {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+  </style>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    jQuery(document).ready(function ($) {
+      $('.counter').counterUp({
+        delay: 10,
+        time: 1000
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <!-- start slider  -->
+  <section>
+    
+    <div class="menu-bg fixed-top" id="navbar">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-6">
+            <a class="navbar-brand" href="index.html">
+              <img class="logo-img " src="image/logo/logo.jpg" alt="">
+            </a>
+            <a class="navbar-brand text-white fw-bold" href="index.html" style="text-transform: uppercase;">
+              <span style="color: #F79622;">Z well</span class="fw-bold"> Homes
+            </a>
+          </div>
+          <div class="col-lg-9 col-md-9 col-6">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="about.html">About Us</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Businesses
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">ZENITH Corporation</a></li>
+                        <li><a class="dropdown-item" href="#">ZENITH DREAM Housing</a></li>
+                        <li><a class="dropdown-item" href="#">ZENITH Toileties and Cosmatics Ltd.</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="mediablog.html" tabindex="-1" aria-disabled="true">Media & Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="contact.html" tabindex="-1" aria-disabled="true">Contact Us</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end slider  -->
+
+ <!-- Start About section -->
+ <div class="about-slider py-2">
+    <div class="container">
+        <div class="about-title py-5">
+            <h2 class="text-white py-5 mt-5">About Us</h2>
+        </div>
+        
+    </div>
+</div>
+
+  <!-- Start About Us Section -->
+  <section class="" style="background: #333;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-12">
+          <div class="bg-dark py-5 px-3">
+            <div class="accordion" id="myAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true">BEHIND THE SCENE </button>									
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#myAccordion">
+                        <div class="card-body bg-dark">
+                            <p class="text-white">
+                              Z Well Homes (Pvt) Ltd. is one of the leading real estate development company in Bangladesh. Z Well Homes (Pvt.) Ltd. specializes in developing exclusive apartment complexes in prime locations of Dhaka city.
+                              Z Well Homes is an active member of the Real Estate Z Well Homes (Pvt.) Ltd. has become a trusted name in the real estate sector in Bangladesh. From its very inception in 2002, the company has won the confidence and goodwill of its client’s mind. Within a short period, Z Well Homes has grown into a renowned and dependable organization, building elegant, aesthetically pleasing structures that grace Dhaka as most beautiful neighbourhoods. Z WELL Homes uses the highest quality building materials and finishing products to ensure durability and customer satisfaction.
+                              The main concentration of Z WELL Homes has been in prime, attractive locations of All of Mirpur Location of Dhaka city, the emphasis being on sound construction and aesthetic design. Also, Z WELL Homes has tried to provide accommodations suitable for small families while creating scope for development of residential lands in the vicinity of the capital city. Efforts are underway to cater to the needs of clients in every market segment. The success of such a large construction company requires specialized labors and highly qualified professional backup, and Z WELL has developed a strong team of such highly skilled, experienced professionals to work under its competent management.
+                              The company currently has four hundred employees working, most of them being very qualified and experienced in their respective fields. At present, Z WELL has lot of apartment building projects at hand in the most prestigious areas of the city such as All of Mirpur Location. More than 16(Sixteen) completed apartment buildings have already been handed over to its clients.
+ 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                      <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo">Our Team </button>									
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                      <div class="card-body bg-dark">
+                          <p class="text-white">For over three decades we have helped people make their Z WELL Homes dreams a reality, and we are here to help you find your ideal home.
+                            Whether buying or selling a home, a Realtor can greatly benefit you by making the process easier for a smooth, seamless transaction. Read more to find out what our Realtors can do for you.
+                            For more than three decades Z WELL Homes (Pvt.) Ltd. has been the number one real estate company in Bangladesh. Here is our story.
+                            Our ongoing mission is to provide the highest level of service to our clients by helping them when they are buying or selling. We aim to assist you in making the best real estate decision possible based on your needs.
+                            </p>
+                      </div>
+                  </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        
+
+      </div>
+    </div>
+  </section>
+  <!-- Start About Us Section -->
+  
+
+  <!-- Start Architects And Engineers Section -->
+  <section class="py-3 about-content" style="background: #000;">
+    <div class="container">
+      <h2 class="text-center text-white py-2">Management</h2>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="example manage mb-4">
+            <img src="image/abdul.jpg" class="px-5" alt="">
+            <h4 class="text-white text-center">Abdul Khaleque </h4>
+            <p class="text-white text-center">Founder & Managing Director</p>
+
+            <div class="fadedbox">
+              <a href="signle.html" style="text-decoration: none;">
+                <div class="title text"> 
+                    <h4 class="text-dark text-center">Abdul Khaleque</h4>
+                    <p class="text-dark text-center">Founder & Managing Director</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="example manage mb-4">
+            <img src="image/mnmn.jpg" class="px-5" alt="">
+            <h4 class="text-white text-center">Israt Jahan </h4>
+            <p class="text-white text-center">Chairman</p>
+
+            <div class="fadedbox">
+              <a href="signle.html" style="text-decoration: none;">
+                <div class="title text"> 
+                    <h4 class="text-dark text-center">Israt Jahan</h4>
+                    <p class="text-dark text-center">Chairman</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <div class="col-lg-6 col-md-6 col-12">
+            <div class="example manage">
+              <img src="image/4R.jpg" class="px-5" alt="">
+              <h4 class="text-white text-center">Md. Farid Hossain(Faisal)</h4>
+              <p class="text-white text-center">Manager (Head of Marketing)</p>
+
+              <div class="fadedbox">
+                <a href="signle.html" style="text-decoration: none;">
+                <div class="title text"> 
+                    <h4 class="text-dark text-center">Md. Farid Hossain(Faisal)</h4>
+                    <p class="text-dark text-center">Manager (Head of Marketing)</p>
+                </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-12">
+            <div class="example manage">
+              <img src="image/ashok.jpg" class="px-5" alt="">
+                <h4 class="text-white text-center">Md.Tanvir Ahmed</h4>
+                <p class="text-white text-center">Manager (Admin & HR)</p>
+
+              <div class="fadedbox">
+                <a href="signle.html" style="text-decoration: none;">
+                <div class="title text"> 
+                    <h4 class="text-dark text-center">Md.Tanvir Ahmed</h4>
+                    <p class="text-dark text-center">Manager (Admin & HR)</p>
+                </div>
+                </a>
+              </div>
+            </div>
+            
+          </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- End Architects And Engineers Section -->
+
+  <!-- Start Footer section -->
+  <section class="bg-footer p-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-12">
+          <div>
+            <h4 class="text-white">Important Menu</h4>
+            <ul class="footer-menu">
+              <li><a href="#"><i class="fa-solid fa-angle-right text-white"></i> Home</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i> Service</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-12">
+          <div>
+            <h4 class="text-white">Important Menu</h4>
+            <ul class="footer-menu">
+              <li><a href="#"><i class="fa-solid fa-angle-right text-white"></i> Career</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i> All project</a></li>
+              <li><a href="#"><i class="fa-solid fa-angle-right"></i> Blog</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-12">
+          <div>
+            <h4 class="text-white">About Us</h4>
+            <p class="text-white">
+              Z WELL Homes is an active member of the Real Estate & Housing Association of Bangladesh
+              Z WELL Homes is an active member of the Real Estate & Housing Association of Bangladesh
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row"></div>
+    </div>
+  </section>
+  <!-- End Footer section -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+  <script src="js/jquery.counterup.min.js"></script>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/all.js"></script>
+  <script src="js/owl.carousel.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const controls = document.querySelectorAll('.control');
+    let activeSlide = 0;
+    let prevActive = 0;
+
+    changeSlides();
+    let int = setInterval(changeSlides, 4000);
+
+    function changeSlides() {
+      slides[prevActive].classList.remove('active');
+      controls[prevActive].classList.remove('active');
+
+      slides[activeSlide].classList.add('active');
+      controls[activeSlide].classList.add('active');
+
+      prevActive = activeSlide++;
+
+      if (activeSlide >= slides.length) {
+        activeSlide = 0;
+      }
+
+      console.log(prevActive, activeSlide);
+    }
+
+    controls.forEach(control => {
+      control.addEventListener('click', () => {
+        let idx = [...controls].findIndex(c => c === control);
+        activeSlide = idx;
+
+        changeSlides();
+
+        clearInterval(int);
+        int = setInterval(changeSlides, 4000);
+      });
+    });
+  </script>
+
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 20,
+      autoplay: true,
+      autoplayTimeout: 1000,
+      nav: false,
+      dots: false,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 3
+        }
+      }
+    })
+  </script>
+
+
+</body>
+
+</html>
